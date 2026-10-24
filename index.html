@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="A simple to-do list app to manage everyday tasks.">
+   <title>To-Do List</title>
+   <link rel="stylesheet" href="styles/style.css">
+   <script src="scripts/script.js" defer></script>
+</head>
+<body>
+   <main class="app">
+      <header class="app-header">
+         <p class="eyebrow">TASK MANAGER</p>
+         <h1>My Tasks</h1>
+         <p class="subtitle">Keep track of what needs to get done.</p>
+      </header>
+
+      <form class="task-form" id="taskForm">
+         <label class="sr-only" for="taskInput">New task</label>
+         <input
+            id="taskInput"
+            name="task"
+            type="text"
+            placeholder="Add a task..."
+            maxlength="200"
+            autocomplete="off"
+            required
+         >
+         <button class="add-button" type="submit">Add task</button>
+      </form>
+
+      <section class="tasks-section" aria-labelledby="tasksHeading">
+         <div class="section-heading">
+            <h2 id="tasksHeading">
+               Tasks <span id="taskCount" class="task-count">0</span>
+            </h2>
+
+            <div class="filters" role="group" aria-label="Filter tasks">
+               <button
+                  class="filter-button active"
+                  type="button"
+                  data-filter="all"
+                  aria-pressed="true"
+               >All</button>
+               <button
+                  class="filter-button"
+                  type="button"
+                  data-filter="active"
+                  aria-pressed="false"
+               >Active</button>
+               <button
+                  class="filter-button"
+                  type="button"
+                  data-filter="completed"
+                  aria-pressed="false"
+               >Completed</button>
+            </div>
+         </div>
+
+         <ul class="task-list" id="taskList" aria-live="polite"></ul>
+         <p class="empty-state" id="emptyState">
+            No tasks yet. Add your first task above.
+         </p>
+      </section>
+   </main>
+</body>
+</html>
